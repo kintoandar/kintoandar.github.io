@@ -1,0 +1,14 @@
+---
+layout: post
+title: Cool Ubuntu know how
+date: '2008-01-05T15:45:00.001Z'
+author: Joel Bastos
+tags: 
+modified_time: '2010-02-12T12:00:58.618Z'
+thumbnail: http://bp2.blogger.com/_iWsqNoMkfno/R3-qZ3FKwuI/AAAAAAAAACw/Owx7TZZLbFg/s72-c/ubntu.gif
+blogger_id: tag:blogger.com,1999:blog-1780138848439428569.post-2976519664298332160
+blogger_orig_url: http://blog.kintoandar.com/2008/01/cool-ubuntu-know-how.html
+comments: true
+---
+
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp2.blogger.com/_iWsqNoMkfno/R3-qZ3FKwuI/AAAAAAAAACw/Owx7TZZLbFg/s1600-h/ubntu.gif"><img style="margin: 0pt 10px 10px 0pt; float: left; cursor: pointer;" src="http://bp2.blogger.com/_iWsqNoMkfno/R3-qZ3FKwuI/AAAAAAAAACw/Owx7TZZLbFg/s320/ubntu.gif" alt="" id="BLOGGER_PHOTO_ID_5152023859994215138" border="0" /></a><br />One interesting thing is that in Red Hat based distributions the "run levels" configuration utility is <span style="font-weight: bold;">chkconfig</span> but in Ubuntu (Debian) the utility is <span style="font-weight: bold;">sysv-rc-conf</span>.<br /><br />--<span style="font-weight: bold;"><br /><br /></span>If you have mute sound problems in <span style="font-weight: bold;">Quake III Arena</span>, try using these commands as root, this one before playing the game:<br /><br />echo "quake3.x86 0 0 direct" > /proc/asound/card0/pcm0p/oss<br /><br />After exiting the game: <span style="font-weight: bold;"></span><br /><br />echo "quake3.x86 0 0 disable" > /proc/asound/card0/pcm0c/oss<br /><br />--<br /><br />Sound problems in <span style="font-weight: bold;">Pidgin</span>?<br />In the [ Preferences > Sounds >  Method ] choose <span style="font-style: italic;">command</span> and write on the <span style="font-style: italic;">Sound command</span> text box:<br /><span style="font-weight: bold;">aplay %s<br /></span>That's it, try it now!<br /><span style="font-weight: bold;"></span>

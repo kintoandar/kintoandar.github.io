@@ -1,0 +1,55 @@
+# Site wide configuration
+
+title:            kintoandar
+locale:           en_US
+url:              http://localhost:4000
+
+
+# Jekyll configuration
+permalink: /:year/:month/:title.html
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+# Site owner
+owner:
+  name: Joel Bastos
+  avatar: bio-photo.jpg
+  bio: "Linux engineer with a keen interest on devops culture, geek by definition and curious by nature"
+  email: kintoandar[at]gmail.com
+  disqus-shortname: kintoandar
+  twitter: kintoandar
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-3335811-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: kintoandar
+  stackoverflow: #http://stackoverflow.com/users/123456/username
+  linkedin: joelbastos
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]

@@ -1,0 +1,20 @@
+# Authors
+
+billy_rick:
+  name: Billy Rick
+  web: http://thewhip.com
+  email: billy@rick.com
+  bio: "What do you want, jewels? I am a very extravagant man."
+  avatar: bio-photo-2.jpg
+  twitter: extravagantman
+  google:
+    plus: BillyRick
+
+Joel Bastos:
+  name: Joel Bastos
+  avatar: bio-photo.jpg
+  bio: "Linux engineer with a keen interest on devops culture, geek by definition and curious by nature"
+  email: kintoandar[at]gmail.com
+  twitter: kintoandar
+  github: kintoandar
+  linkedin: joelbastos

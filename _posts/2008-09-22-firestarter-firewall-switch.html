@@ -1,0 +1,13 @@
+---
+layout: post
+title: Firestarter Firewall Switch
+date: '2008-09-22T21:53:00.005+01:00'
+author: Joel Bastos
+tags: 
+modified_time: '2011-11-26T11:03:52.964Z'
+blogger_id: tag:blogger.com,1999:blog-1780138848439428569.post-3805212810618103332
+blogger_orig_url: http://blog.kintoandar.com/2008/09/firestarter-firewall-switch.html
+comments: true
+---
+
+<span style="font-family: arial;">If you use </span><a href="http://www.fs-security.com/" style="font-family: arial;">Firestarter</a><span style="font-family: arial;"> you know the huge bummer that is restarting your settings upon a change of the working interface.</span><br /><span style="font-family: arial;">Here's a little script I've made to automatically change the running network interfaces on the firewall. Enjoy ;)</span><br /><span style="color: #666666; font-size: 85%;"><span style="font-family: arial;">Note: My interfaces are eth0 and wlan0, make the correct modifications to comply with your requirements. </span></span><br /><blockquote><br />#!/bin/sh<br /><br />while true; do<br />INTERFACE=0<br /><br />ifconfig eth0 |grep -q "inet addr"<br />if [ $? = 0 ];<br />then<br />sed -i 's/wlan0/\eth0/' /etc/firestarter/configuration<br />else<br />sed -i 's/eth0/\wlan0/' /etc/firestarter/configuration<br />INTERFACE=1<br />fi<br /><br />iptables -L |grep -q DROP<br />if [ $? != 0 ];<br />then firestarter -s &gt; /dev/null<br />if [ $INTERFACE = 0 ];<br />then<br />echo "$(date) -- firestarter running on eth0" &gt;&gt; /var/log/messages<br />else<br />echo "$(date) -- firestarter running on wlan0" &gt;&gt; /var/log/messages<br />fi<br />fi<br /><br />sleep 5<br /><br />done</blockquote>

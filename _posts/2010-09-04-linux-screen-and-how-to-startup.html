@@ -1,0 +1,14 @@
+---
+layout: post
+title: Linux screen multiple applications startup
+date: '2010-09-04T16:34:00.008+01:00'
+author: Joel Bastos
+tags: 
+modified_time: '2011-02-28T16:26:39.696Z'
+thumbnail: http://2.bp.blogspot.com/_iWsqNoMkfno/TIJkuLOBtnI/AAAAAAAAAOg/I9ehKHxgI1w/s72-c/screen.png
+blogger_id: tag:blogger.com,1999:blog-1780138848439428569.post-2167741108677476319
+blogger_orig_url: http://blog.kintoandar.com/2010/09/linux-screen-and-how-to-startup.html
+comments: true
+---
+
+<div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;"><a href="http://www.gnu.org/software/screen/" target="blank">Screen</a> is one of the most helpful applications you'll ever use.</div><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;">This post will show the configuration I personally use and how to startup multiple applications on boot.</div><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;">Here's how my config looks like running irssi:<br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_iWsqNoMkfno/TIJkuLOBtnI/AAAAAAAAAOg/I9ehKHxgI1w/s1600/screen.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;" target="blank"><img border="0" height="162" src="http://2.bp.blogspot.com/_iWsqNoMkfno/TIJkuLOBtnI/AAAAAAAAAOg/I9ehKHxgI1w/s320/screen.png" width="320" /></a></div><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;"><b>My config</b></div><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;"><span style="color: red;">user@gambit:~$</span> cat ~/.screenrc </div><blockquote>nethack on<br />defscrollback 10000<br />hardstatus on<br />hardstatus alwayslastline<br />hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'<br />startup_message off<br />vbell on<br /><br /># The applications you want running when screen starts<br />screen -t DOWNLOADS 0 rtorrent<br />screen -t IRC 1 irssi</blockquote><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;"><b>Startup&nbsp;</b></div><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;">After configuring your own .screenrc just add on /etc/rc.local the following:</div><blockquote>su <i>user</i> -c "screen -d -m -S SomeCoolName"</blockquote><div style="font-family: Arial,Helvetica,sans-serif; margin-bottom: 0in;">All done, next time there is a system reboot, screen will start with two applications running in the chosen <i>user</i> space.</div>
