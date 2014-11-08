@@ -2,9 +2,8 @@
 
 title:            kintoandar
 locale:           en_US
-#url:              http://localhost:4000
 url:              http://kintoandar.github.io
-
+#url:              http://localhost:4000
 
 # Jekyll configuration
 permalink: /:year/:month/:title.html

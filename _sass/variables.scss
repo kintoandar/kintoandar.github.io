@@ -3,7 +3,7 @@ $doc-font-size: 14;
 $doc-line-height: 26;
 $paragraph-indent: true !default;
 //$base-font: 'PT Serif', serif;
-$base-font: 'PT Sans', sans-serif;
+$base-font: 'PT Sans', serif;
 $heading-font: 'PT Sans Narrow', sans-serif;
 $code-font: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 $alt-font: $base-font;
@@ -29,8 +29,8 @@ $danger				: #C64537;
 $info				  : #308cbc;
 
 // Links
-//$linkcolor 		    : #343434;
-$linkcolor 		    : #003D4C;
+//$linkcolor 		    : #003D4C;
+$linkcolor 		    : #006680;
 $link-color       : $linkcolor;
 $linkcolorhover 	: darken($linkcolor, 10);
 $linkcolorvisited : lighten($linkcolorhover, 20);
