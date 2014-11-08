@@ -34,3 +34,5 @@ So, if you ever need:
 * Power/freedom to do whatever you want
 
 This kind on setup is for you too!
+<br><br>
+<i>**Heads up**, if you've subscribed to my old blog feeds, you might have to update your reader settings.</i>
