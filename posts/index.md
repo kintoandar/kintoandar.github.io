@@ -1,5 +1,5 @@
 ---
 layout: post-index
-title: All Posts
+title: Time Machine
 excerpt: "A List of Posts"
 ---
