@@ -9,6 +9,8 @@ date: 2014-11-10T21:09:45+00:00
 comments: false
 ---
 
+#### Everybody hates PKI
+
 <section id="table-of-contents" class="toc">
   <header>
     <h3>Index</h3>
@@ -18,8 +20,6 @@ comments: false
 {:toc}
 </div>
 </section><!-- /#table-of-contents -->
-
-#### Everybody hates PKI
 
 Yeah, everybody hates **Public Key Infrastructure (PKI)** and I get that, it increases the complexity of a project and when you have to deal with SSL most of your troubleshooting options go down the drain.
 \\
