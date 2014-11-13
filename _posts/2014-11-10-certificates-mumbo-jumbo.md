@@ -65,7 +65,7 @@ As you can see, the wildcard certificate for google.com has two more intermediat
 
 Well, a certificate has several fields that you can check against, for example, the fingerprint or the Common Name (CN). Be advise that when you use the fingerprint, if the certificate is renewed, you'll need to update your validation scheme.
 
-#### Oh no, you don't
+#### Check it out
 
 > How do I check if a certificate as been revoked by a CA?
 
