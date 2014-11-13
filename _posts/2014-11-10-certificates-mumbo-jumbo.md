@@ -26,10 +26,6 @@ Yeah, everybody hates **Public Key Infrastructure (PKI)** and I get that, it inc
 \\
 No wonder there's an old **"MIT Curse"** about casting PKI on an enemy team project, cause when you use it to solve a problem you'll end up having many more.
 
-<div style="text-align:center" markdown="1">
-  ![ssl](/images/ssl.png)
-</div>
-
 #### Secure all the things
 
 However, when **done right**, PKI is currently the best option for securing data exchanges over hostile environments (ex: internet, compromised networks).
@@ -46,16 +42,16 @@ If you're reading this post/rant you're probably using client side SSL on your a
 
 #### Who can you trust?
 
-> Do you know which CAs you currently have on your truststore and what is the **certification chain** needed for the target certificate so it validates successfuly?
+> Do you know which Certification Authorities you currently have on your truststore and what is the **certification chain** needed for the target certificate so it validates it successfuly?
 
-If the answer is **NO**, you're doing it wrong! You should only use Root CAs you trust and nothing else. Why maintain several CAs that you don't care about and that could end up being compromised?
-Yeah, I'm talking about the standard Java `cacerts` file and this message is for all of you who use old Java versions and with it, old `cacerts` truststores. Do yourself a favor and create your own truststores, specifically for your project.
+If the answer is **NO**, you're doing it wrong! You should only use Root Certification Authorities (CA) you trust and nothing else. Why maintain several CAs that you don't care about and that could end up being compromised?
+Yeah, I'm talking about the standard Java `cacerts` file and this message is for all of you who use old Java versions and, with it, old `cacerts` truststores. Do yourself a favor and create your own truststores, specifically for your project.
 
 #### Chaining things together
 
 > What da hell is a certificate chain and why should I care?
 
-When you buy a digital certificate, usually it's not signed directly by a Root CA. Instead, it's signed by an intermediate CA, which by its turn is signed by a higher CA, and so one, until it reaches the Root. This is called the certificate chain. Here's an example:
+When you buy a digital certificate, usually it's not signed directly by a Root CA. Instead, it's signed by an intermediate CA, which by its turn is signed by a higher CA, and so one, until it reaches the Root one. This is called the certificate chain. Here's an example:
 
 <div style="text-align:center" markdown="1">
   ![ssl](/images/google_chain.png)
@@ -75,19 +71,17 @@ Well, a certificate has several fields that you can check against, for example, 
 
 There're two mechanisms for that, **Certificate Revocation Lists** (CRL) and **Online Certificate Status Protocol** (OCSP):
 
-*  **CRL** - File with a list of all revoked certificates issued by the Certification Authority (CA), you can find a link to download on the CA certificate
-*  **OSCP** - Service to check if a certain certificate is still valid, if implemented by the CA, you can just query if a certain certificate issued by that CA is still valid
+*  **CRL** - File with a list of all revoked certificates issued by the CA. You can find a link to download it in the CA certificate.
+*  **OSCP** - Service to check if a certain certificate is still valid. If implemented by the CA, you can just query if a certain certificate issued by that CA is still valid.
 
 #### Bigger is not always better
 
 > A higher key size, like 4096 bits, is always better, right?
 
 Security wise, definitely! But there's a price to pay. It will have an impact in the performance of your server due to the cryptographic operations using that key. So, a key size of 2048 bits will be your best choice right now, lower than that it will be refused by some servers.
-\\
-\\
-_In conclusion..._
-\\
-\\
+
+#### In conclusion...
+
 Please keep in mind that you should **never, ever, <u>ever</u> share your private key!** I've heard the most ludicrous reasons for getting a hold on a private key, and the answer should always be: **NO WAY IN HELL!**
 
 ---
@@ -122,7 +116,7 @@ openssl req -new -key $DOMAIN.key -subj  "/C=PT/L=Porto/ST=Portugal/O=Epic Organ
 openssl req -text -noout -verify -in $DOMAIN.csr
 {% endhighlight %}
 
-> After sending the `.csr` to a CA so it may generate a new certificate, you'll eventually receive a `.pem` or `.der` file.
+After sending the `.csr` to a CA so it may generate a new certificate, you'll eventually receive a `.pem` or `.der` file.
 
 ##### Print .pem
 {% highlight bash %}
@@ -185,6 +179,8 @@ keytool -list -v -keystore $DOMAIN.jks
 {% highlight bash %}
 openssl s_client -connect $DOMAIN:443
 {% endhighlight %}
+
+<br><br>
 
 #### May the PKI be with you
 
