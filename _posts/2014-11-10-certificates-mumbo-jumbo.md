@@ -6,7 +6,7 @@ modified:
 categories:
 tags:
 date: 2014-11-10T21:09:45+00:00
-comments: false
+comments: true
 ---
 
 #### Everybody hates PKI
