@@ -79,9 +79,11 @@ There're two mechanisms for that, **Certificate Revocation Lists** (CRL) and **O
 > A higher key size, like 4096 bits, is always better, right?
 
 Security wise, definitely! But there's a price to pay. It will have an impact in the performance of your server due to the cryptographic operations using that key. So, a key size of 2048 bits will be your best choice right now, lower than that it will be refused by some servers.
-
-#### In conclusion...
-
+\\
+\\
+**As a heads up...**
+\\
+\\
 Please keep in mind that you should **never, ever, <u>ever</u> share your private key!** I've heard the most ludicrous reasons for getting a hold on a private key, and the answer should always be: **NO WAY IN HELL!**
 
 ---
