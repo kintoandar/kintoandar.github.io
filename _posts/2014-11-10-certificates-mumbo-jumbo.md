@@ -63,7 +63,7 @@ As you can see, the wildcard certificate for google.com has two more intermediat
 
 > How to guarantee that a certificate from a certain CA is exactly the one I'm expecting and not a random one from the same CA?
 
-Well, a certificate has several fields that you can check against, for example, the fingerprint or the Common Name (CN). Be advise that when you use the fingerprint, if the certificate is renewed, you'll need to update your validation scheme.
+Well, a certificate has several fields that you can check against, for example, the fingerprint or the Common Name (CN). Be advised that when you use the fingerprint, if the certificate is renewed, you'll need to update your validation scheme.
 
 #### Check it out
 
