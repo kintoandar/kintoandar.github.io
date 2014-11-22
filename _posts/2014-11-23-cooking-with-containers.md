@@ -22,7 +22,7 @@ I've spined up a CoreOS vagrant and started having some fun.
 <i class="fa fa-plus"></i>
 \\
 \\
-![docker](/images/docker.png)
+![Docker](/images/Docker.png)
 </div>
 
 Yeah, yeah, I know there's **boot2docker**, that abstracts everything in a easy install, so why have all the fuss of getting CoreOS up and running?
