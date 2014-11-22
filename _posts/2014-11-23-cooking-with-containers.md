@@ -6,7 +6,7 @@ modified:
 categories:
 tags:
 date: 2014-11-22T13:09:45+00:00
-comments: false
+comments: true
 ---
 
 If you follow my blog you probably already know I've been playing around with docker and CoreOS from sometime now.
