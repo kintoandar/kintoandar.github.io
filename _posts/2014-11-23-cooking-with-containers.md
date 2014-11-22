@@ -151,7 +151,7 @@ kitchen converge
 This will download a docker image I've built from the public docker hub, start a new container, push an example cookbook into it, generate a runlist and do a chef-solo run with that runlist, all **like magic**.
 \\
 \\
-If all went according to plan, with that example you just converged your first container testing an _useless_ cookbook. So give yourself a pat on the back, good job!
+If all went according to plan, you just converged your first container testing an _useless_ cookbook. So give yourself a pat on the back, good job!
 \\
 \\
 Now you can go on and build _awesome_ cookbooks, fully tested on your new shiny setup, **enjoy**!
