@@ -142,7 +142,7 @@ You should see something like this:
 ![kitchen](/images/kitchen.png)
 </div>
 \\
-I've available on github an example so you can start testing your setup right away.
+I've made available on github an example so you can start testing your setup right away.
 {% highlight bash %}
 git clone https://github.com/kintoandar/cooking_with_containers.git
 cd cooking_with_containers
