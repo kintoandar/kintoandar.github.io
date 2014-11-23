@@ -26,7 +26,7 @@ I've spined up a CoreOS vagrant and started having some fun.
 </div>
 
 Yeah, yeah, I know there's **boot2docker**, that abstracts everything in a easy install, so why have all the fuss of getting CoreOS up and running?
-Because I believe CoreOS will be **the** building block of the future of containerisation. And the time for learning it is now!
+Because I believe CoreOS will be **the** building block of the future of containerisation. And the time for learning about it, is now!
 \\
 \\
 I started by building my first docker image from scratch. Things escalated quite quickly and I ended up with an awesome chef cookbook testing setup, almost by accident :p
