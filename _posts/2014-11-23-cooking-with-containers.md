@@ -130,6 +130,14 @@ You should see something like this:
 \\
 \\
 ![docker_ps](/images/docker_ps.png)
+<br>
+
+<i>**Note:** If you can't reach the coreos guest via 172.17.8.101 it might be related to an overlapping route on your host.\\
+You'll need to add a new route, here's an example:
+\\
+\\
+route -vn add -net 172.17.8.0/24 -interface vboxnet1</i>
+{: .notice}
 
 #### That's it, let the cooking begin
 <div style="text-align:center" markdown="1">
@@ -155,8 +163,8 @@ If all went according to plan, you just converged your first container testing a
 \\
 \\
 Now you can go on and build _awesome_ cookbooks, fully tested on your new shiny setup, **enjoy**!
-\\
-\\
-\\
-\\
-**Protip:** vim + syntastic + rubocop + foodcritic = another #epic combo!
+<br>
+<br>
+
+**Pro-tip:** vim + syntastic + rubocop + foodcritic = another #epic combo!
+{: .notice}
