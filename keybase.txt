@@ -1,0 +1,71 @@
+==================================================================
+https://keybase.io/kintoandar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://blog.kintoandar.com
+  * I am kintoandar (https://keybase.io/kintoandar) on keybase.
+  * I have a public key with fingerprint 36CF 8BD9 F787 5BC2 BA3C  8B09 9915 7A6E C3E7 4DC9
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "36cf8bd9f7875bc2ba3c8b0999157a6ec3e74dc9",
+            "host": "keybase.io",
+            "key_id": "99157a6ec3e74dc9",
+            "uid": "b0160ec4e1d533966b215f478bab3d00",
+            "username": "kintoandar"
+        },
+        "service": {
+            "hostname": "blog.kintoandar.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1418858978,
+    "expire_in": 157680000,
+    "prev": "bcb80aeb88304dd8403925376460cce399a8b992770b67dc34ec140785159d96",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.6
+Comment: https://keybase.io/crypto
+
+yML9AnicO8LLzMDFOFO0Ku/wc9+TjKcP/C5lCJkk+KhaKSk/pVLJqlopOxVMpWXm
+pacWFRRl5pUoWSkZmyWnWSSlWKaZW5ibJiUbJSUaJ1skGVhaWhqamieapSYbp5qb
+pCRbKukoZeQXg3QAjUlKLE7Vy8wHigE58ZkpQFEs6kvBEkkGhmYGqckmqYYppsbG
+lmZmSUaGpmkm5hZJiUnGKQYGIIXFqUV5ibmpIMOBrspPzEtJLFKq1VECipdlJqeC
+XA2yHKomKSc/XQ+hUC85PxdoSEFRfkl+cn4OUEFGSUmBFUh/SWUBSEN5alI81Kj4
+pMy8FGAAADWUpRYVZ+bnKVkZAlUml2SCzDY0MbSwMLWwNLfQUUqtKMgsSo3PBKkw
+NTezMAACkDWpZSA3JCdZGCSmJllYGBuYpKRYmBgYWxqZGpubmZgZJCenGltaJlok
+WVoamZsbJJmZpyQbm6QmG5oYmFuYGppapliaKYE8V5iXDzTbEOjOxHSgmcWZ6XmJ
+JaVFqUq1hw7GsDAwcjGwsTKB4pCBi1MAFrMLZvL/93m2oTJ5cuqj6dYZCQecjvyf
+erLM4PdStn9/7cUdPEVur3F5Pkn982Nug6jmtm1KohVCU4usputfvzbflmG7/23z
+ENacYP1FQlu96k+F7G0PX3ml3+SqgndH30ohgYtuPttC1govLZ/FP1G4fG/n75TP
+m54/vuwRcipccQHDW+3ghVNCbrEI3mfdvjx29WZd7w4+gRypeU2vZPv2iRZdUlRe
+5XGSQfml359PatYpqjqFRzunMRcbipQIRwvGJnTxp+TXTHt+5Fb/tBT9ExHT3t/M
+rxNR8VdkkrcMf5F4Ouvj5p1K306nLE07/Eo3VqyvaMPRR8yN2lP3fq4MWhSd0vuO
+wydx+6J3chYPejSnLZC7HDr1ynLW+TtNZT5v/Lqkuy2hgpftZ3znNru5jP0WR9tT
+mrok+brCXjTdjHsgtF3fZ/vVTXHzHn477Se4dTpH4/nF9/+WfT7asCAodLtM2uON
+7A79DCIN+uvEYgoWM3BOfWXxSnf/761JBcedpuzfkyMx/9x2te/LFu04mZ+2tdjj
+fe5r4+l8Sxam95wO2rlCsvDeLp8fFplC/XKWd2IXbXm4dYvma/sVR/8zrrznJn65
+1K/wUMmVUzfnWLww7ZtWJfy+LKJ0qTFrlufzD5wzuiZb7WNz+l3LeCrmVXjjlC8L
+E55eLdhRtX2r4MxXSRwiW4JbzBgeLYkwfLNI0jhDI/XPrQsCM8SPn1HYBgAgqpa7
+=aJF2
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kintoandar
+
+==================================================================
+
