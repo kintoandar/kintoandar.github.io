@@ -51,7 +51,7 @@ Yeah, I'm talking about the standard Java `cacerts` file and this message is for
 
 > What da hell is a certificate chain and why should I care?
 
-When you buy a digital certificate, usually it's not signed directly by a Root CA. Instead, it's signed by an intermediate CA, which by its turn is signed by a higher CA, and so one, until it reaches the Root one. This is called the certificate chain. Here's an example:
+When you buy a digital certificate, usually it's not signed directly by a Root CA. Instead, it's signed by an intermediate CA, which by its turn is signed by a higher CA, and so on, until it reaches the Root one. This is called the certificate chain. Here's an example:
 
 <div style="text-align:center" markdown="1">
   ![ssl](/images/google_chain.png)
