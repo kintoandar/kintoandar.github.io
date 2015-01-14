@@ -1,0 +1,35 @@
+.custom-social-buttons {
+    padding-top: 30px;
+    margin-bottom: 100px;
+}
+
+.custom-social-button {
+    height: 40px;
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+
+.custom-social-button.googleplus {
+    float: right;
+}
+
+.custom-social-button a {
+    vertical-align: middle;
+    color: #555;
+    font-weight: bold;
+}
+
+.custom-social-button a i {
+    font-size: 25pt;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+}
+
+.custom-social-button a:hover {
+    vertical-align: middle;
+    color: #ccc;
+    font-weight: bold;
+}
