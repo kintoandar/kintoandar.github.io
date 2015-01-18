@@ -17,7 +17,7 @@ some of us still have the privilege to tackle this task.
 ![automation_cloud](/images/automation_cloud.jpg)
 </div>
 
-Don't get me wrong, OS installation **is not** a lost art and it's vital as the underlying corner stone of a infrastructure.
+Don't get me wrong, OS installation **is not** a lost art and it's vital as the underlying corner stone of an infrastructure.
 
 > How would you guarantee important OS security/service upgrade in production will play nice with your application?
 
