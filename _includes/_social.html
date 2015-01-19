@@ -14,7 +14,7 @@
   window.onload = function(){
     var blogDomain = encodeURIComponent("{{ site.url }}");
     var pageTitleSpaces = encodeURIComponent("{{ page.title }}") + "&amp;";
-    var pageID = "{{ page.id }}";
+    var pageID = "{{ page.id }}.html";
     var pageURL = encodeURIComponent(pageID) + "&amp;";
       
     var twitterPartOne = "https://twitter.com/intent/tweet?original_referer=";
