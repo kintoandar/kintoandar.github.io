@@ -157,12 +157,12 @@ openssl pkcs12 -in $DOMAIN.p12 -out $DOMAIN.pem -nokeys -clcerts
 openssl pkcs12 -in $DOMAIN.p12 -out $DOMAIN.key -nocerts
 {% endhighlight %}
 
-##### Convert .jks to .p12
+##### Convert .p12 to .jks
 {% highlight bash %}
 keytool -importkeystore -deststorepass "VeryStrongPass" -destkeypass "VeryStrongPass" -destkeystore $DOMAIN.jks -srckeystore $DOMAIN.p12 -srcstoretype PKCS12 -srcstorepass "VeryStrongPass" -alias 1
 {% endhighlight %}
 
-##### Convert .p12 to .jks
+##### Convert .jks to .p12
 {% highlight bash %}
 keytool -importkeystore -srckeystore $DOMAIN.jks -destkeystore $DOMAIN.p12 -srcstoretype JKS -deststoretype PKCS12 -srcstorepass "VeryStrongPass" -deststorepass "VeryStrongPass" -srcalias 1 -destalias 1 -srckeypass "VeryStrongPass" -destkeypass "VeryStrongPass" -noprompt
 {% endhighlight %}
