@@ -179,7 +179,7 @@ keytool -list -v -keystore $DOMAIN.jks
 
 ##### Get full certificate chain from a webserver
 {% highlight bash %}
-openssl s_client -connect $DOMAIN:443
+openssl s_client -showcerts -connect $DOMAIN:443
 {% endhighlight %}
 
 <br><br>
