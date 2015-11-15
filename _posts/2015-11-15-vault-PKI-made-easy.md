@@ -21,7 +21,8 @@ image:
 
 #### Disclamer
 Well, not quite **PKI Made Easy**, but definitely a bit more **fun**!  
-I've done all this work on OSX, but I believe the Linux setup should be very similar.
+I've done all this work on OSX, but I believe the Linux setup should be very similar.  
+[Vault 0.3](https://hashicorp.com/blog/vault-0.3.html) was the version used.
 
 ----
 
