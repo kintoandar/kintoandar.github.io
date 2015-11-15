@@ -226,7 +226,7 @@ You should see the revoked Serial Number.
 #### Vault with TLS
 This bit took me quite a while to figure out.
 <br><br>
-The documentation doesn't mention how to do it, so I had to read the code.
+The documentation doesn't mention how to do it.
 The Vault server doesn't send the Intermediate CA certificate with the leaf certificate to the vault client, this way you can't just trust the Root CA, you'll need to trust the Intermediate one... `¯\_(ツ)_/¯`
 <br><br>
 I even tried providing a ca_bundle with the Root CA certificate in it, but no luck.
