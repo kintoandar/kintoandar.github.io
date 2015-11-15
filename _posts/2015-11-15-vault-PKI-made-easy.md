@@ -133,7 +133,7 @@ Here you go (thank me later):
 
 > You should never use a Root CA to issue client/server certificates, if it's compromised you're screwed! Instead, generate an intermediate CA and if that one it's compromised just revoke it and issue a new one.
 
-With your certificates generated, now build a certificate bundle with the Root CA certificate, Intermediate CA certificate and Intermediate CA key.
+With your certificates generated, now build a certificate bundle with the Intermediate CA certificate and Intermediate CA key.
 {% highlight bash %}
 export DUMMY_CA=/PATH/TO/dummy_ca
 
