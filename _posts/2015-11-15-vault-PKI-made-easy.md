@@ -75,7 +75,7 @@ You now should have a running instance of Vault using the `/tmp/vault/vault.conf
 
 ----
 
-##### Initialize Vault
+#### Initialize Vault
 {% highlight bash %}
 cd /tmp/vault
 
@@ -90,7 +90,7 @@ cat credentials.txt
 
 ----
 
-##### Unseal Vault
+#### Unseal Vault
 Vault is protected by M-of-N so you'll need to run the unseal command 3 times using a different key each time to open it.
 
 > The M of N feature provides a means by which organizations employing cryptographic modules for sensitive operations can enforce multi-person control over access to the cryptographic module. [(source)](http://cloudhsm-safenet-docs.s3.amazonaws.com/007-011136-002_lunasa_5-1_webhelp_rev-a/Content/concepts/mofn_about.htm)
