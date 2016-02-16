@@ -169,7 +169,7 @@ keytool -importkeystore -srckeystore $DOMAIN.jks -destkeystore $DOMAIN.p12 -srcs
 
 ##### List .p12 certificates
 {% highlight bash %}
-openssl pkcs12 -info -in $DOMAIN.jks
+openssl pkcs12 -info -in $DOMAIN.p12
 {% endhighlight %}
 
 ##### List .jks certificates
