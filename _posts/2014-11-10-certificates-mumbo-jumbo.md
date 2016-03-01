@@ -177,9 +177,22 @@ openssl pkcs12 -info -in $DOMAIN.p12
 keytool -list -v -keystore $DOMAIN.jks
 {% endhighlight %}
 
-##### Get full certificate chain from a webserver
+##### Get certificate chain from a webserver
 {% highlight bash %}
 openssl s_client -showcerts -connect $DOMAIN:443
+{% endhighlight %}
+
+##### Curl commands
+
+###### Client side test
+{% highlight bash %}
+curl -v https://$DOMAIN --cert ./public.pem --key ./private.key
+{% endhighlight %}
+
+###### Specifying a truststore
+{% highlight bash %}
+# Add the Root CA to an empty file called trustore.pem
+curl -v https://$DOMAIN --cacert trustore.pem
 {% endhighlight %}
 
 <br><br>
