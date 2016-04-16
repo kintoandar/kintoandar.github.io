@@ -40,7 +40,7 @@ But for that you'll need consistent, versioned and automated way of creating VMs
 Well, this is the next step on the evolution and, as I was living under a rock regarding all things related to base VM build automation,
 I just started yesterday playing around with these awesome tools (yeah... it was a rainy weekend).
 
-####The plan was
+#### The plan was
 
 *  Build a minimal Centos 6.6 x86_64 VirtualBox VM
 *  Use my own kickstart files
@@ -56,22 +56,22 @@ So, the next steps were taken to achieve the above requirements (popcorn not inc
 
 ---
 
-#Veewee
+# Veewee
 [RTFM][bf5bdee4]
 
   [bf5bdee4]: https://github.com/jedi4ever/veewee/blob/master/doc/basics.md "RTFM"
 
-###Get it
+### Get it
 {% highlight bash %}
 gem install veewee
 {% endhighlight %}
 
-###Grab an example
+### Grab an example
 {% highlight bash %}
 git clone https://github.com/kintoandar/veewee.git definitions
 {% endhighlight %}
 
-###Use it
+### Use it
 {% highlight bash %}
 # validate config
 veewee vbox validate 'centos-6.6-x86_64'
@@ -80,12 +80,12 @@ veewee vbox validate 'centos-6.6-x86_64'
 veewee vbox build 'centos-6.6-x86_64'
 {% endhighlight %}
 
-###Share it
+### Share it
 {% highlight bash %}
 veewee vbox export 'centos-6.6-x86_64'
 {% endhighlight %}
 
-###Import it
+### Import it
 {% highlight bash %}
 vagrant box add 'centos-6.6-x86_64' './centos-6.6-x86_64.box'
 vagrant init 'centos-6.6-x86_64'
@@ -93,42 +93,42 @@ vagrant up
 vagrant ssh
 {% endhighlight %}
 
-###Watch the magic happen
+### Watch the magic happen
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/6vuqs51xiJ0" frameborder="0" allowfullscreen></iframe><br>
 
 ---
 
-#Packer
+# Packer
 [RTFM][bb0d94ae]
 
   [bb0d94ae]: https://www.packer.io/docs "RTFM"
 
-###Get it
+### Get it
 {% highlight bash %}
 brew tap homebrew/binary
 brew install packer
 {% endhighlight %}
 
-###Migrating from Veewee?
+### Migrating from Veewee?
 {% highlight bash %}
 # AKA was too lazy to build a packer template
 gem install veewee-to-packer
 {% endhighlight %}
 
-###Grab an example
+### Grab an example
 {% highlight bash %}
 git clone https://github.com/kintoandar/packer.git
 {% endhighlight %}
 
-###Use it
+### Use it
 {% highlight bash %}
 cd packer/centos-6.6-x86_64
 packer validate template.json
 packer build template.json
 {% endhighlight %}
 
-###Import it
+### Import it
 {% highlight bash %}
 vagrant box add 'centos-6.6-x86_64' './centos-6.6-x86_64.box'
 vagrant init 'centos-6.6-x86_64'
@@ -136,7 +136,7 @@ vagrant up
 vagrant ssh
 {% endhighlight %}
 
-###Watch the magic happen
+### Watch the magic happen
 <iframe width="420" height="315" src="//www.youtube.com/embed/Etcmywy0JHs" frameborder="0" allowfullscreen></iframe><br>
 
 <br><br>
