@@ -23,13 +23,15 @@ image:
 
 #### About
 [fwd](https://github.com/kintoandar/fwd) is a network port forwarder written in golang.<br>
+It's cross platform, supports multiple architectures and it's dead simple to use.<br>
+<br>
 In this post I'll talk about this tool and my approach to the process of automating the build of an application in golang.<br>
 
 ----
 
 #### Motivation
 I've increasingly been hearing great things regarding the Go Language and thought it might be worth a shot digging into it.
-As usual, there's nothing better than creating a project with the right motivation to learn the language while maintaining an high level of interest.<br>
+As usual, there's nothing better than creating a project with the right motivation to learn the language while maintaining a high level of interest.<br>
 
 <div style="text-align:center" markdown="1">
 ![github_logo](/images/github.png)
@@ -87,7 +89,7 @@ curl +-----------------> | fwd | +-------------------> | web |
 ##### fwd ♥️ ngrok
 I must admit `ngrok` was an huge inspiration for `fwd`. If you don't know the tool you should definitely check out [this talk](https://www.youtube.com/watch?v=F_xNOVY96Ng) from [@inconshreveable](https://twitter.com/inconshreveable).<br>
 <br>
-This tool combo (fwd + ngrok) allows some wicked mischief, like taking [firewall hole punching](https://en.wikipedia.org/wiki/Hole_punching_(networking)) to another level! And the setup is dead easy.<br>
+This tool combo (fwd + ngrok) allows some wicked mischief, like taking [firewall hole punching](https://en.wikipedia.org/wiki/Hole_punching_(networking)) to another level! And the setup is trivial.<br>
 <br>
 `ngrok` allows to expose a local port on a public endpoint and `fwd` allows to connect a local port to a remote endpoint. You see where I'm heading with this... With both tools you can connect a public endpoint to a remote port as long as you have access to it.<br>
 <br>
@@ -141,6 +143,8 @@ Next I'll show you how I've setup the build system for this application.
 
 
 ##### Travis
+_"Travis CI is a hosted continuous integration and deployment system."_<br>
+<br>
 It is such a delight to use, it simply doesn't get in your way, it's trivial to setup and above all there's a huge community backing it up, so rest assured you'll always find an answer if you ever hit an issue.<br>
 
 <div style="text-align:center" markdown="1">
