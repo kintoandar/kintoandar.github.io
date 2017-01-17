@@ -38,7 +38,7 @@ If you just want to have fun or get to know a different city using a conference 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">High Mojito Availability<br><br>Cause sometimes all you need is some downtime...<a href="https://twitter.com/hashtag/oreilly?src=hash">#oreilly</a> <a href="https://twitter.com/hashtag/sre?src=hash">#sre</a> <a href="https://twitter.com/hashtag/devops?src=hash">#devops</a> <a href="https://twitter.com/hashtag/vacation?src=hash">#vacation</a> <a href="https://t.co/otrtbfyhtg">pic.twitter.com/otrtbfyhtg</a></p>&mdash; Joel (@kintoandar) <a href="https://twitter.com/kintoandar/status/740072341984677888">June 7, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <br>
-On the contrary, if your interest is to appreciate conferences as a networking opportunity, a chance to get answers from others that went through similar problems or to meet the rockstars in your field, then you stumbled upon the right post. Here, I hope to crystalize _my_ current views on this subject and give you some guidelines on how to prepare yourself and get your way around conferences.
+On the contrary, if your interest is to appreciate conferences as a networking opportunity, a chance to get answers from others that went through similar problems or to meet the rockstars in your field, then you stumbled upon the right post. Here, I hope to crystallize _my_ current views on this subject and give you some guidelines on how to prepare yourself and get your way around conferences.
 
 ---
 
