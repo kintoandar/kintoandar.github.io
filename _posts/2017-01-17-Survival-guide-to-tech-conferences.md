@@ -27,7 +27,7 @@ Everyone that is fortunate enough to attend tech conferences has different persp
 
    * There are the ones that just want to watch the talks, even if it’s on a TV outside the room where the presentation is happening;
 
-   * Others use conferences as an excuse to party hard with teammates and don’t even stop by at the venue;
+   * Others use conferences as an excuse to party hard with teammates and don’t even stop by the venue;
 
    * Lastly, the ones who aim to meet others with similar interests and grab the opportunity to discuss problems/solutions with different experts.
 
@@ -50,14 +50,14 @@ From my own experience, what I value the most are open source, operations, cultu
    * `opensource`
    * `culture`
 
-When choosing where to spend your time and money, you should try to find out who will be speaking, if there are any presentations that you are eager to watch, if there are any companies attending that you want to get acquainted with, and even what type of audience the event has. If we’re talking about a conference that you’ve never heard of, you should also try to do a background check (see previous editions, confirm the feedback on social media, that sort of things).
+When choosing where to spend your time and money, you should try to find out who will be speaking, if there are any presentations that you are eager to watch, if there are any companies attending that you want to get acquainted with, and even what type of audience the event has. If we’re talking about a conference that you’ve never heard of, you should also try to do a background check (see previous editions, confirm the feedback on social media, that sort of thing).
 
 ---
 
 #### Step 2 - How to get there
 There are various options on how to attend conferences, like being a speaker, a participant, a sponsor, a volunteer, or even a organizer. Since my experience is mostly in the first two categories, I will only focus on them. It's not always easy to be a speaker at an event (and I will explain more later on) but, if you want to get out there, you can start by applying to lightning talks or submit papers to the events you’re most fond of.<br>
 <br>
-Then there’s the question of financing your participation. Being a speaker might help, since some conferences covers the speaker's’ expenses. Paying from your own pocket it’s always an option and might provide more value to your spendings. Alternatively, your company may have set a budget for training, such as for online courses, certifications and/or conferences, among others. I’ve never seen much value on certifications (this could be an entire post all together), but I do see numerous benefits in attending conferences.
+Then there’s the question of financing your participation. Being a speaker might help, since some conferences cover the speaker's’ expenses. Paying from your own pocket is always an option and might provide more value to your spendings. Alternatively, your company may have set a budget for training, such as for online courses, certifications and/or conferences, among others. I’ve never seen much value on certifications (this could be an entire post all together), but I do see numerous benefits in attending conferences.
 
 ---
 
@@ -82,7 +82,7 @@ Not everyone is comfortable giving a speech to hundreds. Heck, I bet most people
 
    * At one time, I was keen on using the operating system as an artifact of the delivery pipeline, just like any other application running on it, providing a consistent, versioned and automated way of creating machines. I took the opportunity of another presentation I was making and also introduced this subject, which eventually was implemented and accepted by my colleagues across the company.
 
-   * Once I got tired of recurrently dealing with Public Key Infrastructure (PKI) issues, so I prepared a presentation to my colleagues about the fundamentals of PKI. I already gave this talk 3 times (one in Portugal, other in Romania, and another in a Security Event) and the outcome couldn’t be better - it helped reduced the toil of dealing with PKI related issues, which showed me that sometimes you really have to put yourself out there.
+   * Once I got tired of recurrently dealing with Public Key Infrastructure (PKI) issues, so I prepared a presentation for my colleagues about the fundamentals of PKI. I already gave this talk 3 times (one in Portugal, other in Romania, and another in a Security Event) and the outcome couldn’t be better - it helped reduced the toil of dealing with PKI related issues, which showed me that sometimes you really have to put yourself out there.
 
 <div style="text-align:center" markdown="1">
 ![poster](/images/sec_poster.gif)
@@ -99,7 +99,7 @@ When attending an event, really appreciate the corridors. You can always have th
 <br>
 Almost everybody likes to meet new people, but sometimes it can be frightening, depending on who you’re talking to, or even on your own personality. In either case, it’s once again important to get out of your comfort zone and, for me, the key element to have in mind when approaching others is *empathy*.<br>
 <br>
-You should always do your homework so you know whom is present at the event and whom you want to meet. It’s also important to have a sense on when you should introduce yourself and how can you engage in conversation and make a good first impression.
+You should always do your homework so you know whom is present at the event and whom you want to meet. It’s also important to have a sense of when you should introduce yourself and how can you engage in conversation and make a good first impression.
 
 ##### Do your homework (but don’t be a stalker)
 
