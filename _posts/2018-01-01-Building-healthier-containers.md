@@ -56,7 +56,7 @@ It used to be a very daunting task to manage those kernel features, so tools wer
 Apparently, it was so cool that some folks created an abstraction layer over it to make it trivial to anyone. I first saw that abstraction, back in 2013, showcased on this [talk by Solomon Hykes](https://www.youtube.com/watch?v=wW9CAH9nSLs), an engineer working for a company called dotCloud, nowadays known as Docker.
 
 <div style="text-align:center" markdown="1">
-![docker](/images/docker.png)
+![docker](/images/docker_2018.png)
 </div>
 
 And the rest is history. Eventually docker dropped the need for LXC, it now deals with the kernel features abstraction directly (libcontainer) and has an entire ecosystem for container management.
