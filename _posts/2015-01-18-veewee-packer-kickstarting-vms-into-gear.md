@@ -1,13 +1,15 @@
 ---
-layout: post
 title: "Veewee, Packer and Kickstarting VMs Into Gear"
 excerpt: "In a world where the Operating System installation is almost a thing of the past, with all the hosting providers giving you base boxes to use, some of us still have the privilege to tackle this task."
-author: Joel Bastos
-modified: 2015-01-18
+header:
+  teaser: /images/automation_cloud.jpg
+  og_image: /images/automation_cloud.jpg
+toc: true
+toc_sticky: true
 tags:
-comments: true
-image:
-  thumb: automation_cloud.jpg
+  - automation
+  - howto
+  - linux
 ---
 
 In a world where the Operating System (OS) installation is almost a thing of the past, with all the hosting providers giving you base boxes to use,
@@ -24,10 +26,9 @@ Don't get me wrong, OS installation **is not** a lost art and it's vital as the 
 > How would you be certain the development environment Virtual Machines (VMs) are a match to the production ones?
 
 These questions are easily answered when using the OS as an artefact of the delivery pipeline, just like the application running on it.
-\\
+
 But for that you'll need consistent, versioned and automated way of creating VMs...
-\\
-\\
+
 **Meet [Veewee][14a48e29] and [Packer][654b6829]**!
 
   [654b6829]: https://www.packer.io/ "Packer"
@@ -40,7 +41,7 @@ But for that you'll need consistent, versioned and automated way of creating VMs
 Well, this is the next step on the evolution and, as I was living under a rock regarding all things related to base VM build automation,
 I just started yesterday playing around with these awesome tools (yeah... it was a rainy weekend).
 
-#### The plan was
+## The plan was
 
 *  Build a minimal Centos 6.6 x86_64 VirtualBox VM
 *  Use my own kickstart files
@@ -51,12 +52,9 @@ I just started yesterday playing around with these awesome tools (yeah... it was
     * Grab some popcorn while it builds
 * Give Veewee and Packer a decent test-drive
 
-\\
 So, the next steps were taken to achieve the above requirements (popcorn not included).
 
----
-
-# Veewee
+## Veewee
 [RTFM][bf5bdee4]
 
   [bf5bdee4]: https://github.com/jedi4ever/veewee/blob/master/doc/basics.md "RTFM"
@@ -97,9 +95,7 @@ vagrant ssh
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/6vuqs51xiJ0" frameborder="0" allowfullscreen></iframe><br>
 
----
-
-# Packer
+## Packer
 [RTFM][bb0d94ae]
 
   [bb0d94ae]: https://www.packer.io/docs "RTFM"
@@ -139,8 +135,5 @@ vagrant ssh
 ### Watch the magic happen
 <iframe width="420" height="315" src="//www.youtube.com/embed/Etcmywy0JHs" frameborder="0" allowfullscreen></iframe><br>
 
-<br><br>
-**That's all folks!**
-\\
-\\
+## That's it, that's all
 And this is how, in a couple of hours, I've became a fan of Veewee and Packer, `#truestory`.

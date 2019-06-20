@@ -1,29 +1,23 @@
 ---
-layout: post
 title: "Building healthier containers"
 excerpt: "Deconstructing containers and examples to better understand the technology"
-author: Joel Bastos
-modified: 2018-01-01
+header:
+  teaser: /images/containers_not_vms.jpg
+  og_image: /images/containers_not_vms.jpg
+toc: true
+toc_sticky: true
 tags:
-comments: true
-image:
-  thumb: containers_not_vms.jpg
+  - containers
+  - linux
+  - howto
+  - security
 ---
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Index</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
 
 <div style="text-align:center" markdown="1">
 ![lightweightvm](/images/containers_not_vms.jpg)
 </div>
 
-#### Intro
+## Intro
 Containers are <b>nothing</b> like virtual machines!<br>
 <br>
 Now that we've cleared that up, this post will try to shed some light regarding:
@@ -35,13 +29,12 @@ Now that we've cleared that up, this post will try to shed some light regarding:
   * Benefits of minimal containers
   * Tools that help build minimal containers
 
-##### Disclaimer
+### Disclaimer
 
 I’ll be using docker throughout this post as it’s more widely used, but these concepts should apply to other runtime environments like, for example, rkt, lxd or containerd.
 
---------------
 
-#### It’s all about abstraction
+## It’s all about abstraction
 
 When virtual machine [Hypervisors](https://en.wikipedia.org/wiki/Hypervisor) started their rise, they provided full or paravirtualization, fancy names for virtualizing everything or using special drivers on the guest to improve the manipulation of the real machine (host). Both guest and host had a full operating system copy, including their own kernel, libraries, tools and so on.<br>
 <br>
@@ -61,9 +54,8 @@ Apparently, it was so cool that some folks created an abstraction layer over it 
 
 And the rest is history. Eventually docker dropped the need for LXC, it now deals with the kernel features abstraction directly (libcontainer) and has an entire ecosystem for container management.
 
---------------
 
-#### But it still looks like a Virtual Machine to me
+## But it still looks like a Virtual Machine to me
 
 I can understand why we compare containers to virtual machines. They “feel” the same, and that’s great.
 But keep in mind virtual machines need their own kernel, init system, drivers, etc., and containers just use the host’s kernel to isolate processes (preferably, one process per container).<br>
@@ -74,9 +66,8 @@ The container runtime provides the basic filesystem and kernel features for your
 <br>
 I've prepared a few examples to help materialize these concepts.
 
---------------
 
-#### Meet busybox
+## Meet busybox
 
 <div style="text-align:center" markdown="1">
 ![busybox](/images/busybox.png)
@@ -123,9 +114,8 @@ Where did all that stuff come from? Shouldn’t it only have `/bin`?<br>
 <br>
 There are differences between a container image and that same image during runtime. The [Open Container Initiative (OCI) libcontainer spec](https://github.com/opencontainers/runc/blob/master/libcontainer/SPEC.md) explains it quite nicely.
 
---------------
 
-#### That’s sourcery, I want my Dockerfile back
+## That’s sourcery, I want my Dockerfile back
 
 Sure, whatever rocks your boat.<br>
 You probably heard about the `scratch` container. Let’s build our own and call it `zero`:
@@ -148,16 +138,15 @@ docker build . -t myapp-zero
 docker run -ti myapp-zero /bin/ls -lah
 {% endhighlight %}
 
---------------
 
-#### Spoiler alert
-If we're on the same page, you must be realizing that all this fuss around containers should be instead around tar files, right?<br>
-<br>
+### Spoiler alert
+
+If we're on the same page, you must be realizing that all this fuss around containers should be instead around tar files, right?
+
 🤔
 
---------------
+## I demand a shell
 
-#### I demand a shell
 One could argue that a shell is mandatory for debugging. Obviously strace has to be present, but what if I need to copy files from/to the container? Maybe use a SSH daemon?<br>
 <br>
 Well, let me put this crystal clear: <b>You don’t!</b><br>
@@ -225,9 +214,9 @@ With that said, let’s then strive to restrict the attack surface on our contai
   * Faster build times
   * Faster ship times
 
---------------
 
-#### Dependency hell
+## Dependency hell
+
 I get it,  it’s hard to manage all the dependencies of a real application and completely detach it from the operating system where it was built, but rest assured, there are more people who feel the same and the community is here to help.<br>
 <br>
 These are some tools to make things less painful:
@@ -244,9 +233,9 @@ If you want to have complete control of what’s inside your container and not d
 
 For more buzzwordy tools I recommend [this talk](https://www.youtube.com/watch?v=5D_SqLv92V8) from Michael Ducy.
 
---------------
 
-#### That’s it, that’s all
+## That’s it, that’s all
+
 Well, not quite, this is just the beginning. There are a lot of standards/implementations evolving and being adopted (OCI, CNI, CRI, etc.).
 
 <div style="text-align:center" markdown="1">
