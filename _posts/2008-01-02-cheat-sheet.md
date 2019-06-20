@@ -2,11 +2,11 @@
 title: "Cheat Sheets"
 excerpt: "Step up your game on Linux, Vim, Google, Firefox and Thunderbird with these very useful cheat sheets of shortcuts, locations and tips/tricks."
 header:
-  teaser: /images/Cheating.JPG
-  og_image: /images/Cheating.JPG
+  teaser: /images/cheating.jpg
+  og_image: /images/cheating.jpg
 ---
 
-![Cheating](/images/Cheating.JPG){: .align-center}
+![Cheating](/images/cheating.jpg){: .align-center}
 
 Cá ficam os ditos "auxiliares de memória", sim porque o copianço nunca matou ninguém, embora já tenha dado ZERO a muita boa gente :p
 
