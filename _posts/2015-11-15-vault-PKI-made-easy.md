@@ -1,32 +1,22 @@
 ---
-layout: post
 title: "Vault: PKI Made Easy"
-excerpt: "A test drive of Vault PKI backend"
-author: Joel Bastos
-modified: 2015-11-15
+excerpt: "A test drive of Hashicorp Vault PKI backend"
+header:
+  teaser: /images/vault.png
+  og_image: /images/vault.png
+toc: true
+toc_sticky: true
 tags:
-comments: true
-image:
-  thumb: vault.png
+  - security
+  - howto
 ---
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Index</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
 
-#### Disclamer
+## Disclamer
 Well, not quite **PKI Made Easy**, but definitely a bit more **fun**!  
 I've done all this work on OSX, but I believe the Linux setup should be very similar.  
 [Vault 0.3](https://hashicorp.com/blog/vault-0.3.html) was the version used.
 
-----
-
-#### Containerize all the things
+## Containerize all the things
 Last week I was tinkering with Docker and wanted to get Hashicorp Vault running on a container, this was mainly a plan to trick myself into learning more about Vault.  
 <br>
 The Docker stuff went pretty well and you have available a public container to prove it, check it out at:
@@ -35,9 +25,7 @@ The Docker stuff went pretty well and you have available a public container to p
 <br><br>
 Regarding the plan, it worked flawlessly and I've got really interested in the application.  
 
-----
-
-#### So, what's Vault?
+## So, what's Vault?
 
 <div style="text-align:center" markdown="1">
 ![vault_logo](/images/vault.png)
@@ -61,9 +49,7 @@ These are the points I'll cover:
 *  Revoke a certificate
 *  Vault using TLS
 
-----
-
-#### Setup
+## Setup
 
 Create the following `vault.conf` file:
 {% gist 3677aba5a14249ac499a vault.conf %}
@@ -74,9 +60,7 @@ Create and run the following setup script on the same path as the vault.conf fil
 <br>
 You now should have a running instance of Vault using the `/tmp/vault/vault.conf` configuration.
 
-----
-
-#### Initialize Vault
+## Initialize Vault
 {% highlight bash %}
 cd /tmp/vault
 
@@ -89,9 +73,7 @@ curl http://127.0.0.1:8200/v1/sys/init
 cat credentials.txt
 {% endhighlight %}
 
-----
-
-#### Unseal Vault
+## Unseal Vault
 Vault is protected by M-of-N so you'll need to run the unseal command 3 times using a different key each time to open it.
 
 > The M of N feature provides a means by which organizations employing cryptographic modules for sensitive operations can enforce multi-person control over access to the cryptographic module. [(source)](http://cloudhsm-safenet-docs.s3.amazonaws.com/007-011136-002_lunasa_5-1_webhelp_rev-a/Content/concepts/mofn_about.htm)
@@ -99,34 +81,26 @@ Vault is protected by M-of-N so you'll need to run the unseal command 3 times us
 vault unseal
 {% endhighlight %}
 
-----
-
-#### Export the Root Token
+## Export the Root Token
 This will authenticate your vault client against the Vault server.
 
 {% highlight bash %}
 export VAULT_TOKEN=use-your-generated-root-token
 {% endhighlight %}
 
-----
-
-#### Check the current mount points
+## Check the current mount points
 {% highlight bash %}
 vault mounts
 {% endhighlight %}
 
-----
-
-#### Mount the PKI backend
+## Mount the PKI backend
 {% highlight bash %}
 vault mount pki
 vault mounts
 vault path-help pki
 {% endhighlight %}
 
-----
-
-#### Get your hands on a CA certificate
+## Get your hands on a CA certificate
 You'll need a CA for the next steps. Don't have one?  
 Here you go (thank me later):
 <br><br>
@@ -146,9 +120,7 @@ openssl rsa -in $DUMMY_CA/pki/intermediate/private/intermediate.key >> \
   /tmp/vault/ca_bundle.pem
 {% endhighlight %}
 
-----
-
-#### Configure the PKI backend
+## Configure the PKI backend
 Carefully read the documentation regarding the API endpoints [`/pki/config/`](https://vaultproject.io/docs/secrets/pki/index.html), [`/pki/roles`](https://vaultproject.io/docs/secrets/pki/index.html) and [`/pki/issue/`](https://vaultproject.io/docs/secrets/pki/index.html)
 
 {% highlight bash %}
@@ -176,9 +148,7 @@ Split the `sheep.certs` into a separated key and certificate files:
 *  `sheep.pem`
 *  `sheep.key`
 
-----
-
-#### Test the CRL
+## Test the CRL
 This shouldn't return any revoked certificates yet.
 {% highlight bash %}
 curl -v http://127.0.0.1:8200/v1/pki/crl/pem
@@ -197,9 +167,7 @@ curl -v http://127.0.0.1:8200/v1/pki/crl/pem
 * Connection #0 to host 127.0.0.1 left intact
 {% endhighlight %}
 
-----
-
-#### Revoking a certicate
+## Revoking a certicate
 To revoke a certificate you first need its Serial Number.
 {% highlight bash %}
 export SHEEP_SN=$(openssl x509 -in /tmp/vault/sheep.pem -text | \
@@ -211,9 +179,7 @@ curl -v -X POST http://127.0.0.1:8200/v1/pki/revoke \
   -d '{"serial_number":"'$SHEEP_SN'"}'
 {% endhighlight %}
 
-----
-
-#### Test the CRL
+## Test the CRL
 {% highlight bash %}
 curl -v http://127.0.0.1:8200/v1/pki/crl/pem > \
   /tmp/vault/crl.pem
@@ -222,9 +188,7 @@ openssl crl -inform PEM -in /tmp/vault/crl.pem -text
 {% endhighlight %}
 You should see the revoked Serial Number.
 
-----
-
-#### Vault with TLS
+## Vault with TLS
 This bit took me quite a while to figure out.
 <br><br>
 The documentation doesn't mention how to do it.
@@ -255,11 +219,10 @@ You can check the certificate the server is using and the chain if he sends it, 
 openssl s_client -showcerts -connect 127.0.0.1:8200
 {% endhighlight %}
 
-----
-
+## That's it, that's all
 This blog post only scratches the surface of what Vault is capable of.
 I'm currently looking into High Availability and there's still many other backends to try out, but I hope I've piqued your curiosity.  
-<br><br>
+
 Big thanks to [Hashicorp](https://hashicorp.com/) for releasing such amazing open source products.
 
  

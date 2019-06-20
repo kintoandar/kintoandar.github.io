@@ -1,23 +1,16 @@
 ---
-layout: post
 title: "Baking delicious cloud instances"
-excerpt: "A workflow for cloud instances baking and provisioning"
-author: Joel Bastos
-modified: 2017-06-13
+excerpt: "A workflow for cloud instances baking and provisioning using ansible and terraform"
+header:
+  teaser: /images/cake.jpg
+  og_image: /images/cake.jpg
+toc: true
+toc_sticky: true
 tags:
-comments: true
-image:
-  thumb: cake.jpg
+  - automation
+  - development
+  - howto
 ---
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Index</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
 
 <div style="text-align:center" markdown="1">
 ![cake](/images/cake.jpg)
@@ -32,9 +25,7 @@ With immutable and phoenix servers rising in demand, we tend to see more and mor
 <br>
 Let’s put immutable servers aside for a moment and focus on phoenix servers and how to deal with their configuration at boot time, I started thinking there must be a simpler and efficient way to manage their configurations.
 
---------------
-
-#### Amazon Web Services
+## Amazon Web Services
 
 <div style="text-align:center" markdown="1">
 ![amazon_aws](/images/amazon_aws.png)
@@ -45,16 +36,13 @@ During my career I've worked with bare metal servers, XEN and KVM virtualization
 So far I’ve seen a couple of patterns:
 
   * Bake an Amazon Machine Image (AMI) adding a complex shell script to take care of the final provisioning at boot time.
-
   * Ship the AMI with all the environment configurations and, at boot time, just load the correct one, depending on the environment where it's spun up.
 
 No matter which one you choose, you’ll be left with the same problem: the need to build the AMI baking process and, afterwards, getting the final configuration to run at boot.<br>
 <br>
 One could argue that service discovery could address the latter, but you would still need to take care of interfacing it with your service. Most of the services out there don't support service discovery... yet. So I won't dwell into that right now.
 
---------------
-
-#### Configuration Management
+## Configuration Management
 
 For the past few years I’ve been using Chef and Ansible in complex environments, authored several Chef cookbooks, recipes and providers as well as Ansible playbooks, roles and modules. As such, I have strong opinions regarding each one of these tools. In a nutshell:
 
@@ -83,9 +71,7 @@ If you're the only one managing the system, sure, but if your goal is to provide
 <br>
 Becoming someone like Brent ([The Phoenix Project](https://www.goodreads.com/book/show/17255186-the-phoenix-project) IT ninja and all around entreprise bottleneck) is not an option. In order to support the systems’ growth and therefore the business prosperity, we need to ensure technical knowledge is distributed and that everyone is able to modify, improve and use the tooling we build.
 
---------------
-
-#### Infrastructure Management
+## Infrastructure Management
 
 <div style="text-align:center" markdown="1">
 ![terraform](/images/terraform.png)
@@ -93,9 +79,7 @@ Becoming someone like Brent ([The Phoenix Project](https://www.goodreads.com/boo
 
 Tools like Terraform try to fill the gap on infrastructure orchestration as a whole, but I wouldn't call it configuration management per se, at least regarding the instances. Assuming your instances reside inside a private subnet, the interaction provided sums up to the [user_data](https://www.terraform.io/docs/providers/aws/r/instance.html#user_data) configuration, injecting a [cloud-init](https://ahmet.im/blog/cloud-instance-provisioning/#cloudinit) script.
 
---------------
-
-#### Cooking up a plan
+## Cooking up a plan
 
 All this got me wondering... _What do I want out of this?_
 
@@ -112,13 +96,11 @@ When I got to this list, I started by figuring out how could I meet all of the a
 
 **Disclamer:** Being totally honest, my preference would have been Chef instead of Ansible. But since I want more people involved and contributing, I’ve looked for a way to reduce the entry level on the required configuration management knowledge. As described above, I opted for Ansible, trying to keep things simple and straightforward to ease the onboarding of other collaborators.
 
--------------
-
-#### Components
+## Components
 
 This workflow has a few core components, each one with a set of tasks and inherent responsibilities.
 
-##### Orchestrator
+### Orchestrator
 
 Where all the tasks are triggered, so pick your poison:
 
@@ -127,13 +109,13 @@ Where all the tasks are triggered, so pick your poison:
   * Thoughtworks Go
   * ...
 
-##### Local Cache
+### Local Cache
 
 Where the project repository is checked out and all dependencies  are stored. This path will be backed up and sent into the AMI at `/root/bakery` by [our Ansible playbook](https://github.com/kintoandar/bakery/).<br>
 <br>
 When the AMI is instantiated using our cloud-init file, the Ansible playbook will be ran again, now locally, but as the override `cloud_init` will be enabled a different flow will be performed.
 
-##### Ansible-galaxy
+### Ansible-galaxy
 
 If you're familiar with the awesome [Berkshelf](https://docs.chef.io/berkshelf.html) and `berks vendor`, ansible-galaxy has a similar purpose to resolve Ansible roles dependencies and create a local copy of them.<br>
 <br>
@@ -154,13 +136,13 @@ You can download all the required roles using:
 ansible-galaxy install -r ./requirements.yml -p ./roles
 {% endhighlight %}
 
-##### Ansible
+### Ansible
 
 Improves code reusability through roles. Makes configuration templating much easier instead of using cryptic `sed` one liners (even though ❤️ regex).<br>
 <br>
 If the roles have concerns separated per task file, it’s possible to call the templating features separately from the installation ones. This will truly help split the code workflow for the baking and the final configuration at boot up.
 
-##### Packer
+### Packer
 
 <div style="text-align:center" markdown="1">
 ![packer](/images/packer.png)
@@ -168,9 +150,7 @@ If the roles have concerns separated per task file, it’s possible to call the 
 
 More about it on a [previous post](/2015/01/veewee-packer-kickstarting-vms-into-gear.html).
 
--------------
-
-#### Tasting some baked goods
+## Tasting some baked goods
 
 With this approach, the code used for the AMI’s bake is the same as the one used on the final provision during boot up. The only difference is the code flow on the playbook between the two steps.<br>
 <br>
@@ -182,7 +162,7 @@ In this example we want to spin up an instance with [Prometheus](https://prometh
 ![bakery_flow](/images/bakery_flow.jpg)
 </div>
 
-##### Requirements
+### Requirements
 
 This demo has the following requirements:
 
@@ -190,7 +170,7 @@ This demo has the following requirements:
   * Packer >= 1.0.0
   * Ansible >= 2.3.0.0
 
-##### Mixing the ingredients
+### Mixing the ingredients
 
 For generating an AMI to use in this workflow you just need to run:
 
@@ -216,7 +196,7 @@ less /var/log/cloud-init-output.log
 
 Be sure that `/root/bakery/cloud-init.json` was created with all the required overrides for Ansible, specially the `cloud_init=true`.<br>
 
-##### Profit!
+### Profit!
 
 You may destroy and attach a new instance to the separated data volume and Ansible will take care of the logic of dealing with it.<br>
 <br>
@@ -226,17 +206,13 @@ Here’s an example of a Terraform script:
 
 {% gist 583a209474e05bbc0cd6738bf909a9a1 terraform_ebs_volume_attach_example.tf %}
 
---------------
-
-#### Pro tips
+## Pro tips
 
   * You could pass Packer a json file with overrides for Ansible to use during the bake process, taking advantage of [-\-extra-vars](https://www.packer.io/docs/provisioners/ansible.html#extra_arguments).<br>
 <br>
   * Terraform [aws_ebs_volume](https://www.terraform.io/docs/providers/aws/r/ebs_volume.html) allows using a snapshot as the base for the data volume, which is quite useful in case of a major problem that forces you to rollback the data volume to a consistent state.
 
--------------
-
-#### Ready to be served
+## Ready to be served
 
 I wouldn’t say this is the best workflow ever, but it does check out all the requirements I had. I'll keep you posted on how it goes.<br>
 <br>
