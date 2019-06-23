@@ -2,8 +2,8 @@
 title: "Survival guide to tech conferences"
 excerpt: "Step by step guidelines on how to prepare and improve your experience at tech conferences"
 header:
-  teaser: /images/laptop.png
-  og_image: /images/laptop.png
+  teaser: /images/laptop.jpg
+  og_image: /images/laptop.jpg
 toc: true
 toc_sticky: true
 tags:
@@ -12,7 +12,7 @@ tags:
 
 
 <div style="text-align:center" markdown="1">
-![laptop](/images/laptop.png)
+![laptop](/images/laptop.jpg)
 </div>
 
 Everyone that is fortunate enough to attend tech conferences has different perspectives, and expects different outcomes and benefits from these type of events. I commonly see three types of participants, there might be more or even combinations of these:
