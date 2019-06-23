@@ -71,7 +71,7 @@ analytics:
 author:
   name             : "Joel Bastos"
   avatar           : "/images/bio-photo.jpg"
-  bio              : "Engineer with a keen interest in all things infrastructure, geek by definition and curious by nature"
+  bio              : "Engineer with a keen interest in all things infrastructure, geek by definition and curious by nature. Author of Hands-On Infrastructure Monitoring with Prometheus."
   location         : 
   links:
     - label: "Email"

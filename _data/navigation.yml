@@ -1,14 +1,14 @@
 main:
 # Site navigation links
 
+  - title: Publications
+    url: /publications/
+
   - title: Posts
     url: /posts/
 
   - title: Tags
     url: /tags/
-
-  #- title: Publications
-  #  url: /publications/
 
   - title: About
     url: /about/
