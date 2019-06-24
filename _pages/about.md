@@ -13,6 +13,6 @@ I'm an engineer, author, open source supporter and contributor. Have a keen inte
 
 On the community side, I use my [blog](https://blog.kintoandar.com), [GitHub](https://github.com/kintoandar) and [Freenode](https://freenode.net) to help free and open source software users out there as much as I can.
 
-Regarding my work-related experience, it includes security oriented roles, infrastructure automation and delivery, site reliability engineering and architecture, for more context head on over to my [Linkedin page](https://www.linkedin.com/in/joelbastos/).
+Regarding my work-related experience, it includes security oriented roles, infrastructure automation and delivery, site reliability engineering and architecture, for more context head on over to [my Linkedin](https://www.linkedin.com/in/joelbastos/) page.
 
 Last but not least, I have the weird habit of addressing everyone as dude/dudette, so don't be surprised.
