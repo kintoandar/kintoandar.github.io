@@ -10,8 +10,6 @@ related: false
 classes: wide
 header:
   image: /images/publications.jpg
-  teaser: /images/prombook_front.png
-  og_image: /images/prombook_front.png
 
 feature_row1:
   - image_path: /images/prombook_front.png
