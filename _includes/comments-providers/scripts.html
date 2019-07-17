@@ -14,5 +14,7 @@
     {% include /comments-providers/utterances.html %}
   {% when "custom" %}
     {% include /comments-providers/custom.html %}
+  {% when "isso" %}
+    {% include /comments-providers/isso.html %}
 {% endcase %}
 {% endif %}
