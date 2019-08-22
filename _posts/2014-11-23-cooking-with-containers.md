@@ -1,7 +1,6 @@
 ---
 title: "Cooking with Containers"
 excerpt: "Creating testing workflows with containers using docker, coreos and test-kitchen"
-author: Joel Bastos
 date: 2014-11-22
 header:
   teaser: /images/kitchen.png
