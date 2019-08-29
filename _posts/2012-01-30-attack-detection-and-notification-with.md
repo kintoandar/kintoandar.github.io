@@ -82,5 +82,5 @@ You should now be presented with something like this on your host:
 
 ![notify](/images/notify-send.png){: .align-center}
 
-Special thanks to Michael Rash for psad and the one of my favorite books [Attack Detection and Response with iptables, psad, and fwsnort](Attack Detection and Response with iptables, psad, and fwsnort).
+Special thanks to Michael Rash for psad and the one of my favorite books [Attack Detection and Response with iptables, psad, and fwsnort](/2010/02/book-review-linux-firewalls.html).
 {: .notice--info}
