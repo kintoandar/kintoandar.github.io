@@ -27,6 +27,14 @@ feature_row2:
     url: "publications/index.html#programar-magazine"
     btn_label: "Read More"
     btn_class: "btn--info"
+feature_row5:
+  - image_path: /images/yellowbox.png
+    title: "Yellow Box Podcast"
+    alt: "Yellow Box Podcast"
+    excerpt: 'Show about modern monitoring using Prometheus and the experience of publishing a book'
+    url: "publications/index.html#yellow-box-podcast"
+    btn_label: "Read More"
+    btn_class: "btn--info"
 feature_row3:
   - image_path: /images/prombook_front.png
     title: ""
@@ -51,7 +59,9 @@ feature_row4:
 
 {% include feature_row id="feature_row1" type="left" %}
 
-{% include feature_row id="feature_row2" type="right" %}
+{% include feature_row id="feature_row5" type="right" %}
+
+{% include feature_row id="feature_row2" type="left" %}
 
 ## Hands-On Infrastructure Monitoring with Prometheus
 
@@ -95,6 +105,14 @@ By the end of this book, you’ll be able to implement and scale Prometheus as a
 12. Choosing the Right Service Discovery
 13. Scaling and Federating Prometheus
 14. Integrating Long-Term Storage with Prometheus
+
+## Yellow Box Podcast
+
+I was invited to participate in the [Yellow Box show](https://yellowbox.mindera.com/e/14-joel-on-infrastructure-monitoring-with-prometheus/) and share what drove me to write a book on modern monitoring using Prometheus while discussing the technology background, ecosystem and how it behaves at scale.
+
+Have a listen 🎧
+
+<center><iframe title="Joel on monitoring with Prometheus" src="https://www.podbean.com/media/player/28txw-e5fe51&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=112" height="122" width="50%" style="border: none;" scrolling="no" data-name="pb-iframe-player"></iframe></center>
 
 ## Programar Magazine
 
