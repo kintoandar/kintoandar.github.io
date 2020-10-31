@@ -39,15 +39,15 @@ feature_row3:
   - image_path: /images/prombook_front.png
     title: ""
     alt: "Hands-On Infrastructure Monitoring with Prometheus paperback"
-    excerpt: '<div style="text-align:center"><a href="https://amzn.to/30UOVoM" class="btn btn--book btn--large" title="book paperback"><i class="fas fa-book" aria-hidden="true"></i><span> Amazon - Paperback</span></a></div>'
+    excerpt: '<div style="text-align:center"><a href="https://www.bookdepository.com/Hands-On-Infrastructure-Monitoring-with-Prometheus-Joel-Bastos/9781789612349" class="btn btn--book btn--large" title="book paperback"><i class="fas fa-book" aria-hidden="true"></i><span> Book Depository</span></a></div>'
   - image_path: /images/prombook_kindle.png
     title: ""
     alt: "Hands-On Infrastructure Monitoring with Prometheus kindle"
-    excerpt: '<div style="text-align:center"><a href="https://amzn.to/2QBHlL2" class="btn btn--book btn--large" title="book kindle"><i class="fas fa-tablet-alt" aria-hidden="true"></i><span> Amazon - Kindle</span></a></div>'
+    excerpt: '<div style="text-align:center"><a href="https://amzn.to/2QBHlL2" class="btn btn--book btn--large" title="book kindle"><i class="fas fa-tablet-alt" aria-hidden="true"></i><span> Amazon</span></a></div>'
   - image_path: /images/prombook_back.png
     title: ""
     alt: "Hands-On Infrastructure Monitoring with Prometheus packt"
-    excerpt: '<div style="text-align:center"><a href="https://www.packtpub.com/virtualization-and-cloud/hands-infrastructure-monitoring-prometheus" class="btn btn--book btn--large" title="book packt"><i class="fas fa-book-open" aria-hidden="true"></i><span> Packt - Website</span></a></div><br>'
+    excerpt: '<div style="text-align:center"><a href="https://www.packtpub.com/virtualization-and-cloud/hands-infrastructure-monitoring-prometheus" class="btn btn--book btn--large" title="book packt"><i class="fas fa-book-open" aria-hidden="true"></i><span> Packt Publishing</span></a></div><br>'
 feature_row4:
   - image_path: /images/programar_managzine.png
     title: ""
