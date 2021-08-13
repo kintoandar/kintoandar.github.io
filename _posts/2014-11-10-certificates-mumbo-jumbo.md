@@ -185,6 +185,10 @@ curl -v https://$DOMAIN --cert ./public.pem --key ./private.key
 curl -v https://$DOMAIN --cacert trustore.pem
 {% endhighlight %}
 
+### Bash functions
+
+I've created a few helper functions that you might find useful, they're [available here](https://github.com/kintoandar/dotfiles/blob/master/.bashrc.d/functions#L67).
+
 ## May the PKI be with you
 
 I'm just a _Padawan_ on the ways of PKI and obviously this post is **not** _"everything you wanted to know about PKI and were afraid to ask"_, but I sincerely hope it kicks you down the rabbit hole.
