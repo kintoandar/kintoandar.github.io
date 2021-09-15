@@ -53,6 +53,11 @@ feature_row4:
     title: ""
     alt: "Programar Magazine"
     excerpt: '<div style="text-align:center"><a href="/images/Revista_PROGRAMAR_37.pdf" class="btn btn--book btn--large" title="Programar Magazine"><i class="fas fa-tablet-alt" aria-hidden="true"></i><span> Free download</span></a></div><br>'
+feature_row6:
+  - image_path: /images/yellowbox.png
+    title: ""
+    alt: "Yellow Box Podcast"
+    excerpt: '<div style="text-align:center"><a href="/images/mindera_yellow_box.mp3" class="btn btn--book btn--large" title=""><i class="fas fa-play-circle" aria-hidden="true"></i><span> Have a listen</span></a></div><br>'
 ---
 
 {% include feature_row id="intro" type="center" %}
@@ -108,9 +113,9 @@ By the end of this book, you’ll be able to implement and scale Prometheus as a
 
 ## Yellow Box Podcast
 
-I was invited to participate in the [Yellow Box show](https://mindera.com/) and share what drove me to write a book on modern monitoring using Prometheus while discussing the technology background, ecosystem and how it behaves at scale.
+{% include feature_row id="feature_row6" type="center" %}
 
-[Have a listen 🎧](/images/mindera_yellow_box.mp3){: .btn .btn--info}
+I was invited to participate in the [Mindera](https://mindera.com/) Yellow Box show and share what drove me to write a book on modern monitoring using Prometheus while discussing the technology background, ecosystem and how it behaves at scale.
 
 <!--
 <center><iframe title="Joel on monitoring with Prometheus" src="https://www.podbean.com/media/player/28txw-e5fe51&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=112" height="122" width="50%" style="border: none;" scrolling="no" data-name="pb-iframe-player"></iframe></center>
