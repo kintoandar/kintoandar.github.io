@@ -108,11 +108,13 @@ By the end of this book, you’ll be able to implement and scale Prometheus as a
 
 ## Yellow Box Podcast
 
-I was invited to participate in the [Yellow Box show](https://yellowbox.mindera.com/e/14-joel-on-infrastructure-monitoring-with-prometheus/) and share what drove me to write a book on modern monitoring using Prometheus while discussing the technology background, ecosystem and how it behaves at scale.
+I was invited to participate in the [Yellow Box show](https://mindera.com/) and share what drove me to write a book on modern monitoring using Prometheus while discussing the technology background, ecosystem and how it behaves at scale.
 
-Have a listen 🎧
+[Have a listen 🎧](/images/mindera_yellow_box.mp3){: .btn .btn--info}
 
+<!--
 <center><iframe title="Joel on monitoring with Prometheus" src="https://www.podbean.com/media/player/28txw-e5fe51&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=112" height="122" width="50%" style="border: none;" scrolling="no" data-name="pb-iframe-player"></iframe></center>
+-->
 
 ## Programar Magazine
 
