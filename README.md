@@ -1,3 +1,7 @@
+---
+created: 2019-06-20
+updated: 2026-11-19
+---
 # kintoandar
 
 Source for **[blog.kintoandar.com](https://blog.kintoandar.com)**.
@@ -11,8 +15,9 @@ Source for **[blog.kintoandar.com](https://blog.kintoandar.com)**.
 | `static/`   | Copied as-is to the site root (images, favicon, CNAME, ...)  |
 | `theme/`    | HTML templates (`templates.mjs`), `style.css`, card fonts    |
 | `lib/`      | Image optimisation and social card generation                |
-| `site.yml`  | Site settings: title, author, navigation, Disqus, pagination |
+| `site.yml`  | Site settings: title, author, navigation, analytics, paging  |
 | `build.mjs` | The generator                                                |
+| `nginx/`    | Example nginx config for self-hosting                        |
 
 ## Usage
 
@@ -26,6 +31,33 @@ Pushing to `master` builds and deploys to GitHub Pages via `.github/workflows/de
 
 At build time every local image gets width/height, lazy loading and a WebP version (via `<picture>`),
 and each post gets a social preview card at `/og/YYYY/MM/slug.png`. Both are cached in `.cache/`.
+
+## Serving on a web server
+
+`_site/` is plain static files, so any web server works. Posts are files (`/2018/01/slug.html`)
+and pages are folders with an `index.html` (`/posts/`, `/page2/`), so the server only needs to
+serve `index.html` for directories and `404.html` for missing pages.
+
+With nginx, use [`nginx/blog.conf`](nginx/blog.conf) (adjust `server_name` and `root`):
+
+```sh
+npm ci && npm run build
+rsync -av --delete _site/ user@server:/var/www/blog/
+scp nginx/blog.conf user@server:/tmp/ && ssh user@server \
+  'sudo mv /tmp/blog.conf /etc/nginx/conf.d/ && sudo nginx -t && sudo systemctl reload nginx'
+```
+
+For HTTPS, put it behind Cloudflare or add a certificate with `certbot --nginx -d blog.kintoandar.com`.
+
+To try it locally with Docker:
+
+```sh
+docker run --rm -p 8080:80 \
+  -v "$PWD/_site:/var/www/blog:ro" \
+  -v "$PWD/nginx/blog.conf:/etc/nginx/conf.d/default.conf:ro" \
+  nginx
+# http://localhost:8080
+```
 
 ## Writing a post
 
