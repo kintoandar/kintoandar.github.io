@@ -1,0 +1,93 @@
+name: Deploy
+
+# Every push to master (a merged PR) builds the site once, deploys it to
+# GitHub Pages and publishes the same build as a zip on a GitHub release.
+# The self-hosted copy (xinfra) pins the release tag and the zip's sha256,
+# which the release notes print.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false # every merge gets its deploy and release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      tag: ${{ steps.zip.outputs.tag }}
+      asset: ${{ steps.zip.outputs.asset }}
+      sha256: ${{ steps.zip.outputs.sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: build-cache-${{ hashFiles('static/images/**', 'lib/**', 'theme/fonts/**') }}
+          restore-keys: build-cache-
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Zip the site
+        id: zip
+        run: |
+          tag="v$(date -u +%Y.%m.%d)-${GITHUB_RUN_NUMBER}"
+          asset="blog-kintoandar-${tag}.zip"
+          (cd _site && zip -qrX "../$asset" . -x CNAME)
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "asset=$asset" >> "$GITHUB_OUTPUT"
+          echo "sha256=$(sha256sum "$asset" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-zip
+          path: ${{ steps.zip.outputs.asset }}
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-zip
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ needs.build.outputs.tag }}
+          ASSET: ${{ needs.build.outputs.asset }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+        run: |
+          gh release create "$TAG" "$ASSET" \
+            --target "$GITHUB_SHA" \
+            --title "$TAG" \
+            --notes "Built site for blog.kintoandar.com from ${GITHUB_SHA::7}.
+
+          asset: $ASSET
+          sha256: $SHA256"

@@ -1,0 +1,53 @@
+# Site-wide settings used by build.mjs
+
+title: kintoandar
+description: A place where knowledge is Free and Open Source prevails
+url: https://blog.kintoandar.com
+lang: en
+logo: /images/kintoandar_small.png
+og_image: /images/kintoandar.png
+words_per_minute: 200
+paginate: 5
+# Cloudflare Web Analytics beacon token (dashboard > Analytics & Logs > Web Analytics).
+# Leave empty if the domain is proxied through Cloudflare with automatic setup enabled.
+cloudflare_analytics_token:
+# Posts at least this many years old show an "may be out of date" note
+old_post_years: 5
+
+author:
+  name: Joel Bastos
+  avatar: /images/bio-photo.jpg
+  bio: I help companies scale through hypergrowth with automation, reliability and security. Geek by definition, curious by nature.
+  email: hey@kintoandar.com # never written to the HTML as-is, assembled by JavaScript
+  links:
+    - label: kintoandar.com
+      icon: user
+      url: https://www.kintoandar.com/
+    - label: GitHub
+      icon: github
+      url: https://github.com/kintoandar
+    - label: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/joelbastos
+
+nav:
+  - title: Publications
+    url: /publications/
+  - title: Posts
+    url: /posts/
+  - title: Tags
+    url: /tags/
+  - title: About
+    url: /about/
+
+# Hero images for the generated pages
+home:
+  hero: /images/home.jpg
+posts_page:
+  title: Time Machine
+  excerpt: All available posts
+  hero: /images/home.jpg
+tags_page:
+  title: Tags
+  excerpt: Posts by tag
+  hero: /images/home.jpg
