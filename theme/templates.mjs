@@ -316,7 +316,7 @@ export function feed(site, posts) {
   const entries = posts.map((p) => `<entry>
   <title>${esc(p.title)}</title>
   <link href="${abs(site, p.url)}" rel="alternate" type="text/html"/>
-  <id>${abs(site, p.url)}</id>
+  <id>${abs(site, p.url.replace(/\.html$/, ''))}</id>
   <published>${p.date.toISOString()}</published>
   <updated>${p.date.toISOString()}</updated>
   <author><name>${esc(site.author.name)}</name></author>
