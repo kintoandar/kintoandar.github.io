@@ -27,7 +27,9 @@ npm run serve   # http://localhost:4000, rebuilds on change
 npm run build   # writes the site to _site/
 ```
 
-Pushing to `master` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`.
+Every push to `master` (a merged PR) runs `.github/workflows/deploy.yml`, which builds the site once,
+deploys it to GitHub Pages and publishes the same build as a zip on a GitHub release
+(tagged `vYYYY.MM.DD-<run>`, with the zip's sha256 in the release notes).
 
 At build time every local image gets width/height, lazy loading and a WebP version (via `<picture>`),
 and each post gets a social preview card at `/og/YYYY/MM/slug.png`. Both are cached in `.cache/`.
