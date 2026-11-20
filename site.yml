@@ -16,6 +16,7 @@ old_post_years: 5
 
 author:
   name: Joel Bastos
+  title: VP of Engineering & Author
   avatar: /images/bio-photo.jpg
   bio: I help companies scale through hypergrowth with automation, reliability and security. Geek by definition, curious by nature.
   email: hey@kintoandar.com # never written to the HTML as-is, assembled by JavaScript

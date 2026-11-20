@@ -124,6 +124,7 @@ function authorCard(site) {
   <img class="author__avatar" src="${a.avatar}" alt="${esc(a.name)}" itemprop="image" width="110" height="110" loading="eager">
   <div class="author__body">
     <h2 class="author__name" itemprop="name">${esc(a.name)}</h2>
+    ${a.title ? `<p class="author__title" itemprop="jobTitle">${esc(a.title)}</p>` : ''}
     <p class="author__bio" itemprop="description">${esc(a.bio)}</p>
     <ul class="author__links">${email ? `<li>${email}</li>` : ''}${links}</ul>
   </div>
