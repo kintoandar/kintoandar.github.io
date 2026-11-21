@@ -16,7 +16,7 @@ header:
     <p class="pub__actions">
       <a class="btn btn--info" href="https://www.prombook.info">Book website</a>
       <a class="btn" href="https://amzn.to/2QBHlL2">Amazon</a>
-      <a class="btn" href="https://www.packtpub.com/en-us/product/hands-on-infrastructure-monitoring-with-prometheus-9781789808032">Packt</a>
+      <a class="btn" href="https://www.oreilly.com/library/view/hands-on-infrastructure-monitoring/9781789612349/">O'Reilly</a>
     </p>
   </div>
 </header>
