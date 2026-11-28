@@ -213,6 +213,9 @@ function toc(headings) {
 // Pages
 
 function ageNotice(site, p) {
+  if (p.cross_post) {
+    return `<p class="age-notice">Originally published on the <a href="${esc(p.cross_post.url)}">${esc(p.cross_post.name)}</a>.</p>`;
+  }
   const age = new Date().getUTCFullYear() - p.date.getUTCFullYear();
   if (!site.old_post_years || age < site.old_post_years) return '';
   return '<p class="age-notice">This post was handcrafted some time ago and might be out of date.</p>';
